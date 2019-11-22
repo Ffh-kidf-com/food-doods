@@ -9,7 +9,7 @@
     "scripts": {
         "build": "tsc",
         "lint": "tslint -c ../tslint.json ./src/**/*.ts",
-        "start": "node build/app.js",
+        "start": "env-cmd -f ../config/dev.env node build/app.js",
         "start:dev": "nodemon -x \"npm run lint && npm run build && npm run start\""
     },
     "dependencies": {
@@ -29,6 +29,7 @@
     },
     "devDependencies": {
         "debug": "^2.6.9",
+        "env-cmd": "^10.0.1",
         "jest": "^24.9.0",
         "nodemon": "^1.19.4",
         "prettier": "^1.18.2",
